@@ -10,9 +10,13 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 function MessageSender() {
 
     const [input, setInput]=useState();
+    const [imageUrl, setImageUrl]=useState('');
 
     const handleSubmit = event =>{
         event.preventDefault();
+
+        setInput("");
+        setImageUrl("");
     }
 
     return (
@@ -21,7 +25,7 @@ function MessageSender() {
                 <Avatar />
                 <form>
                     <input value={input} onChange={event=>setInput(event.target.value)} type='text' className='messageSender__input' placeholder={`What's on your mind?`}/>
-                    <input type='text' placeholder='image URL (Optional)' />
+                    <input value={imageUrl} onChange={event=>setImageUrl(event.target.value)} type='text' placeholder='image URL (Optional)' />
                     <button onClick={handleSubmit} type='submit'>Hidden submit</button>
                 </form> 
             </div>
