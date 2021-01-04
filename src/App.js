@@ -4,9 +4,11 @@ import Header from './components/header/Header';
 import Feed from './components/feed/Feed';
 import Widgets from './components/widgets/Widgets';
 import Login from './components/login/Login';
+import {useStateValue} from './contextAPI/StateProvider'
 
 function App() {
-  const user=null;
+  const [{user}, dispatch] = useStateValue();
+  
   return (
     <div className="app">
       {!user?(
