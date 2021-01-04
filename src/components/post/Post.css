@@ -17,12 +17,18 @@
     width: 100%;
 }
 
+.post__topInfo{
+    margin-left: 10px;
+}
+
 .post__topInfo>h3{
     font-size: medium;
 }
 
 .post__topInfo>p{
     width: 100%;
+    font-size: 12px;
+    color: gray;
 }
 
 .post__avatar{
