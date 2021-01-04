@@ -8,7 +8,9 @@ import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useStateValue} from '../../contextAPI/StateProvider'
+import {auth} from '../../firebase/firebase';
 
 
 function Sidebar() {
@@ -22,6 +24,7 @@ function Sidebar() {
             <SidebarRow Icon={ChatIcon} title='Messenger'/>
             <SidebarRow Icon={StorefrontIcon} title='Marketplace'/>
             <SidebarRow Icon={VideoLibraryIcon} title='Videos'/>
+            <SidebarRow logout Icon={ExitToAppIcon} title='Log Out'/>
             <SidebarRow Icon={ExpandMoreOutlined} title='Marketplace'/>
  
         </div>

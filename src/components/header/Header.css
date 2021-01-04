@@ -6,7 +6,8 @@
     background-color: white;
     z-index: 100;
     top:0;
-    box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.75)
+    box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.75);
+    position: relative;
 }
 
 .header__left{
@@ -82,3 +83,26 @@
 .header__right{
     display: flex;
 }
+
+.header__dropdown{
+    border: 1px solid black;
+    position: absolute;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: white;
+    right: 20px;
+    top: 65px;
+}
+
+.header__dropdown > p{
+    cursor: pointer;
+}
+
+.header__dropdown--hide{
+    display: none;
+}
+
+.header__dropdown--show{
+    display: block;
+}
+

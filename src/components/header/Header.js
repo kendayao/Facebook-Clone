@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
@@ -12,12 +12,13 @@ import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {useStateValue} from '../../contextAPI/StateProvider'
+import {auth} from '../../firebase/firebase';
 
 
 
 function Header() {
     const [{user}, dispatch] = useStateValue();
-    console.log(user)
+    const [openDropdown, setOpenDropdown]=useState(false);
     return (
         <div className='header'>
             <div className='header__left'>
@@ -59,9 +60,11 @@ function Header() {
                     <NotificationsActiveIcon />
                 </IconButton>
                 <IconButton>
-                    <ExpandMoreIcon />
+                    <ExpandMoreIcon onClick={()=>openDropdown?setOpenDropdown(false): setOpenDropdown(true)}  />
                 </IconButton>
-                
+            </div>
+            <div className={`header__dropdown ${openDropdown?'.header__dropdown--show': 'header__dropdown--hide'}`}>
+                <p onClick={()=>auth.signOut()}>Log Out</p>
             </div>
         </div>
     )
