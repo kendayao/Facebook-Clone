@@ -17,6 +17,7 @@ import {useStateValue} from '../../contextAPI/StateProvider'
 
 function Header() {
     const [{user}, dispatch] = useStateValue();
+    console.log(user)
     return (
         <div className='header'>
             <div className='header__left'>
