@@ -27,6 +27,11 @@ function MessageSender() {
             image: imageUrl,
         })
 
+        db.collection('contacts').add({
+            username: user.displayName,
+            profilePic: user.photoURL
+        })
+
         setInput("");
         setImageUrl("");
     }
