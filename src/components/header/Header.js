@@ -19,11 +19,7 @@ import {auth} from '../../firebase/firebase';
 function Header() {
     const [{user, username}, dispatch] = useStateValue();
     const [openDropdown, setOpenDropdown]=useState(false);
-    console.log(user)
-    console.log(user.email)
-    console.log(user.displayName)
-    console.log(user.emailVerified)
-    console.log(username)
+
     return (
         <div className='header'>
             <div className='header__left'>
@@ -52,8 +48,8 @@ function Header() {
             </div>
             <div className='header__right'>
                 <div className='header__info'>
-                    <Avatar src={user.photoURL} />
-                    <h4>{username}</h4>
+                    {user.photoURL?<Avatar src={user.photoURL} />: <Avatar src="/static/images/avatar/1.jpg" alt={user.displayName} />}
+                    <h4>{user.displayName}</h4>
                 </div>
                 <IconButton>
                     <AddIcon />

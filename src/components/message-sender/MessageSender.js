@@ -34,7 +34,7 @@ function MessageSender() {
     return (
         <div className='messageSender'>
             <div className='messageSender__top'>
-                <Avatar src={user.photoURL} />
+            {user.photoURL?<Avatar src={user.photoURL} />: <Avatar src="/static/images/avatar/1.jpg" alt={user.displayName} />}
                 <form>
                     <input value={input} onChange={event=>setInput(event.target.value)} type='text' className='messageSender__input' placeholder={`What's on your mind, ${user.displayName}?`}/>
                     <input value={imageUrl} onChange={event=>setImageUrl(event.target.value)} type='text' placeholder='image URL (Optional)' />
