@@ -5,3 +5,10 @@
     flex: 0.33;
     width: 100%;
 }
+
+@media (max-width: 1000px){
+    
+    .sidebarRight{
+        display: none;
+    }
+}

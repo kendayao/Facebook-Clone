@@ -14,7 +14,7 @@ function MessageSender() {
 
     const [{user}, dispatch] = useStateValue();
 
-    const [input, setInput]=useState();
+    const [input, setInput]=useState('');
     const [imageUrl, setImageUrl]=useState('');
 
     const handleSubmit = event =>{
@@ -43,7 +43,7 @@ function MessageSender() {
                 <form>
                     <input value={input} onChange={event=>setInput(event.target.value)} type='text' className='messageSender__input' placeholder={`What's on your mind, ${user.displayName}?`}/>
                     <input value={imageUrl} onChange={event=>setImageUrl(event.target.value)} type='text' placeholder='image URL (Optional)' />
-                    <button onClick={handleSubmit} type='submit'>Hidden submit</button>
+                    <button className={input?'messageSender__button messageSender__button--enabled':'messageSender__button messageSender__button--disabled'} disabled={!input} onClick={handleSubmit} type='submit'>Post</button>
                 </form> 
             </div>
             <div className='messageSender__bottom'>

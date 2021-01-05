@@ -51,17 +51,17 @@ function Header() {
                     {user.photoURL?<Avatar src={user.photoURL} />: <Avatar src="/static/images/avatar/1.jpg" alt={user.displayName} />}
                     <h4>{user.displayName}</h4>
                 </div>
-                <IconButton>
-                    <AddIcon />
+                <IconButton >
+                    <AddIcon className='header__icon'/>
                 </IconButton>
-                <IconButton>
-                    <ForumIcon />
+                <IconButton >
+                    <ForumIcon className='header__icon'/>
                 </IconButton>
-                <IconButton>
-                    <NotificationsActiveIcon />
+                <IconButton >
+                    <NotificationsActiveIcon className='header__icon' />
                 </IconButton>
                 <IconButton onClick={()=>openDropdown?setOpenDropdown(false): setOpenDropdown(true)}>
-                    <ExpandMoreIcon />
+                    <ExpandMoreIcon className='header__icon--display' />
                 </IconButton>
             </div>
             <div className={`header__dropdown ${openDropdown?'.header__dropdown--show': 'header__dropdown--hide'}`}>

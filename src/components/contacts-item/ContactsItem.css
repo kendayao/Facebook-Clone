@@ -1,7 +1,6 @@
 .contactsItem__row{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .contactsItem__avatar{
@@ -18,4 +17,15 @@
     position: absolute;
     right: 2px;
     top: 28px;
+}
+
+.contactsItem:hover{
+    background-color: lightgray;
+    cursor: pointer;
+
+}
+
+.contactsItem{
+    padding: 5px 5px 10px 0;
+    border-radius: 10px;
 }

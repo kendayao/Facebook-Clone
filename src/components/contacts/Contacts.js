@@ -16,15 +16,7 @@ function Contacts() {
             setContacts(snapshot.docs.map(doc=>({id: doc.id, data:doc.data()})))
         ))
     },[])
-//     {filteredContacts.map(contact=>(
-//         <ContactsItem 
-//         key={contact.id}
-//         username={contact.username}
-//         profilePic={contact.profilePic}
-//         />
- console.log(contacts)
 
-    
 
     // removes duplicates by locating first instance of matching usernames
     const filteredContacts=contacts.filter((contact, index, obj)=>(
@@ -33,11 +25,6 @@ function Contacts() {
         ))
     ))
 
-    console.log(filteredContacts)
-
-    
-
- 
     return (
         <div className='contacts'>
             <div className='contacts__header'>
