@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './Login.css'
 import Button from '@material-ui/core/Button'
 import {auth, provider} from '../../firebase/firebase'
 import {useStateValue} from '../../contextAPI/StateProvider'
-import {actionTypes} from '../../contextAPI/reducer'
 import Modal from '@material-ui/core/Modal'
 import { makeStyles } from '@material-ui/core/styles';
+import {actionTypes} from '../../contextAPI/reducer'
 
 
 function getModalStyle() {
@@ -51,12 +51,17 @@ function Login() {
 
     const signUp =(event)=>{
         event.preventDefault();
-        auth.createUserWithEmailAndPassword.apply(email, password)
-        .then(authUser=>{
-            return authUser.user.updateProfile({
-                displayName: name
-            })
-        })
+        auth.createUserWithEmailAndPassword(email, password)
+        .then(authUser=>(
+            authUser.user.updateProfile({
+                displayName: name,
+            }).then(()=>(
+                dispatch({
+                    type: actionTypes.SET_NAME,
+                    username:  authUser.user.displayName
+                })
+            ))
+        ))
         .catch((error)=>alert(error.message))
         setName('')
         setEmail('')
@@ -67,7 +72,6 @@ function Login() {
     const signIn=(event)=>{
         event.preventDefault();
         auth.signInWithEmailAndPassword(email, password).catch(error=>alert(error.message))
-        setName('')
         setEmail('')
         setPassword('')
     }
@@ -79,7 +83,7 @@ function Login() {
                 onClose={()=>setOpenModal(false)}
             >
                 <div style={modalStyle} className={classes.paper}>
-                <form className="login__modalSignup">
+                <div className="login__modalSignup">
                     <div className="login__modalTop">
                         <h1>Sign Up</h1>
                         <p>It's quick and easy.</p>
@@ -89,11 +93,11 @@ function Login() {
                             <input type='text' placeholder='Name' value={name} onChange={(event)=>setName(event.target.value)} required></input>
                             <input type='email' placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} required></input>
                             <input type='password' placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)}></input>
-                            <input className='login__modalSignupButtom' type='submit' value='Sign Up' onClick={signUp}/>
+                            <input className='login__modalSignupButton' value='Sign Up' onClick={signUp}/>
                         </form>
                     </div>
 
-                </form>
+                </div>
                 </div>
             </Modal>
 
@@ -108,13 +112,12 @@ function Login() {
             </div>
             <div className='login__formContainer'>
                 <form className='login__form'>
-                    <input className='login__input' type='email' value={email} placeholder="Email"  />
-                    <input className='login__input' value='password' value={password} placeholder="Password"  />
+                    <input className='login__input' type='email' value={email} onChange={(event)=>setEmail(event.target.value)}  placeholder="Email"  />
+                    <input className='login__input' type='password' value={password} onChange={(event)=>setPassword(event.target.value)} placeholder="Password"  />
                     <Button className='login__button' onClick={signIn}>Log In</Button>
                     <p>or</p>
                     <Button className='login__button-google' onClick={signInWithGoogle}><img className='login__image' src='https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png'></img>Sign In With Google</Button>
                 </form>
-
                 <div className='login__form-bottom'>
                     <Button className='login__button-create-account' onClick={()=>setOpenModal(true)}>Create New Account</Button>
                 </div>

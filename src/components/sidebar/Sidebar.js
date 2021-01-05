@@ -10,14 +10,13 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useStateValue} from '../../contextAPI/StateProvider'
-import {auth} from '../../firebase/firebase';
 
 
 function Sidebar() {
     const [{user}, dispatch] = useStateValue();
     return (
         <div className='sidebar'>
-            <SidebarRow src={user.photoURL} title={user.displayName} alt={user.displayName}/>
+            <SidebarRow test src={user.photoURL} title={user.displayName} alt={user.displayName}/>
             <SidebarRow Icon={LocalHospitalIcon} title='COVID-19 Information Center'/>
             <SidebarRow Icon={EmojiFlagsIcon} title='Pages'/>
             <SidebarRow Icon={PeopleIcon} title='Friends'/>

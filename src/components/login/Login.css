@@ -108,7 +108,7 @@
     font-size: 18px;
 }
 
-.login__modalSignupButtom{
+.login__modalSignupButton{
     background-color: #42B72B;
     color: white;
     font-weight: 800;
@@ -116,7 +116,8 @@
     font-size: 18px;
     border-radius: 5px;
     padding: 10px;
-    border: none
+    border: none;
+    cursor: pointer;
 }
 
 .login__modalTop{

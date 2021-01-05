@@ -17,8 +17,13 @@ import {auth} from '../../firebase/firebase';
 
 
 function Header() {
-    const [{user}, dispatch] = useStateValue();
+    const [{user, username}, dispatch] = useStateValue();
     const [openDropdown, setOpenDropdown]=useState(false);
+    console.log(user)
+    console.log(user.email)
+    console.log(user.displayName)
+    console.log(user.emailVerified)
+    console.log(username)
     return (
         <div className='header'>
             <div className='header__left'>
@@ -48,7 +53,7 @@ function Header() {
             <div className='header__right'>
                 <div className='header__info'>
                     <Avatar src={user.photoURL} />
-                    <h4>{user.displayName}</h4>
+                    <h4>{username}</h4>
                 </div>
                 <IconButton>
                     <AddIcon />
@@ -59,8 +64,8 @@ function Header() {
                 <IconButton>
                     <NotificationsActiveIcon />
                 </IconButton>
-                <IconButton>
-                    <ExpandMoreIcon onClick={()=>openDropdown?setOpenDropdown(false): setOpenDropdown(true)}  />
+                <IconButton onClick={()=>openDropdown?setOpenDropdown(false): setOpenDropdown(true)}>
+                    <ExpandMoreIcon />
                 </IconButton>
             </div>
             <div className={`header__dropdown ${openDropdown?'.header__dropdown--show': 'header__dropdown--hide'}`}>
