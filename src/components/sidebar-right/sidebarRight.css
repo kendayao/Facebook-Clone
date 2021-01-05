@@ -1,0 +1,6 @@
+.sidebarRight{
+    padding: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 0.33;
+}

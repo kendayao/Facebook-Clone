@@ -1,0 +1,24 @@
+.birthdays{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.birthdays > h3 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.557);
+    margin-top: 10px;
+}
+
+.birthdays__content{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.birthdays__name{
+    font-weight: 600;
+}
+
+.birthdays__icon{
+    margin-right: 10px;
+}

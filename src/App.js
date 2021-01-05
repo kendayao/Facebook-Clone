@@ -3,12 +3,11 @@ import './App.css';
 import Sidebar from './components/sidebar/Sidebar';
 import Header from './components/header/Header';
 import Feed from './components/feed/Feed';
-import Widgets from './components/widgets/Widgets';
+import SidebarRight from './components/sidebar-right/sidebarRight';
 import Login from './components/login/Login';
 import {useStateValue} from './contextAPI/StateProvider'
 import {auth} from './firebase/firebase';
 import {actionTypes} from './contextAPI/reducer'
-
 
 function App() {
   const [{user}, dispatch] = useStateValue();
@@ -47,7 +46,7 @@ function App() {
       <div className='app__body'>
         <Sidebar/>
         <Feed />
-        <Widgets/>
+        <SidebarRight/>
       </div>
 
       </>
