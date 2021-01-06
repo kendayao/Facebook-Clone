@@ -14,8 +14,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {useStateValue} from '../../contextAPI/StateProvider'
 import {auth} from '../../firebase/firebase';
 
-
-
 function Header() {
     const [{user}, dispatch] = useStateValue();
     const [openDropdown, setOpenDropdown]=useState(false);

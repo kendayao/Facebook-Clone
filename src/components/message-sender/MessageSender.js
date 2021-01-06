@@ -1,17 +1,14 @@
-import { Avatar } from '@material-ui/core'
 import React, {useState} from 'react'
 import './MessageSender.css'
+import { Avatar } from '@material-ui/core'
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import {useStateValue} from '../../contextAPI/StateProvider'
 import db from '../../firebase/firebase'
 
-
 function MessageSender() {
-
     const [{user}, dispatch] = useStateValue();
-
     const [input, setInput]=useState('');
     const [imageUrl, setImageUrl]=useState('');
 
@@ -24,12 +21,10 @@ function MessageSender() {
             username: user.displayName,
             image: imageUrl,
         })
-
         db.collection('contacts').add({
             username: user.displayName,
             profilePic: user.photoURL
         })
-
         setInput("");
         setImageUrl("");
     }

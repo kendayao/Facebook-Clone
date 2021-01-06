@@ -2,6 +2,7 @@
     display: flex;
 }
 
+/* media queries */
 @media (max-width: 1140px){
     .storyReel{
         width: 85%;
@@ -10,7 +11,7 @@
 
 @media (max-width: 1115px){
     .storyReel{
-        width: 80%;
+        width: 85%;
     }
 }
 

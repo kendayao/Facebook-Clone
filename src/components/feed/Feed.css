@@ -8,6 +8,7 @@
     width: 100%;
 }
 
+/* media queries */
 @media (max-width: 1380px){
     .feed{
         padding: 30px 80px;

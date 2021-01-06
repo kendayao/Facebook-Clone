@@ -6,8 +6,8 @@
     width: 100%;
 }
 
+/* media queries */
 @media (max-width: 1000px){
-    
     .sidebarRight{
         display: none;
     }

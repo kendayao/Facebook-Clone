@@ -7,7 +7,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NearMeIcon from '@material-ui/icons/NearMe';
 import { ExpandMoreOutlined } from '@material-ui/icons';
 
-
 function Post({profilePic, image, username, timestamp, message}) {
     return (
         <div className='post'>

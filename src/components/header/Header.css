@@ -106,7 +106,7 @@
     display: block;
 }
 
-
+/* media queries */
 @media (max-width: 1063px){
 
     .header__option{
@@ -138,8 +138,6 @@
         right: 50px;
         top: 60px;
     }
-
- 
 }
 
 @media (max-width: 840px){

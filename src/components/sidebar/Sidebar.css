@@ -3,8 +3,8 @@
     flex: 0.33;
 }
 
+/* media queries */
 @media (max-width: 768px){
-    
     .sidebar{
         display: none;
     }

@@ -80,6 +80,7 @@
     border-radius: 20px;
 }
 
+/* media queries */
 @media (max-width: 1140px){
     .messageSender{
         width: 85%;
@@ -148,7 +149,7 @@
         font-size: 7px;
     }
 
-    .messageSender__top{
+      .messageSender__top{
         padding: 15px 5px;
     }
 

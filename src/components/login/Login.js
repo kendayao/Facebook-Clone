@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import './Login.css'
-import Button from '@material-ui/core/Button'
 import {auth, provider} from '../../firebase/firebase'
 import {useStateValue} from '../../contextAPI/StateProvider'
+import {actionTypes} from '../../contextAPI/reducer'
+import Button from '@material-ui/core/Button'
 import Modal from '@material-ui/core/Modal'
 import { makeStyles } from '@material-ui/core/styles';
-import {actionTypes} from '../../contextAPI/reducer'
-
 
 function getModalStyle() {
     const top = 50;
@@ -31,7 +30,6 @@ function getModalStyle() {
     },
   }));
   
-
 function Login() {
     const [state,dispatch]=useStateValue();
     const classes=useStyles();
@@ -40,7 +38,6 @@ function Login() {
     const [name, setName]=useState('')
     const [password, setPassword]=useState('')
     const [openModal, setOpenModal]=useState(false)
-
 
     const signInWithGoogle =()=>{
         auth.signInWithPopup(provider)
@@ -75,14 +72,16 @@ function Login() {
         setEmail('')
         setPassword('')
     }
+
     return (
         <div className='login'>
+
             <Modal
-                open={openModal}
-                // on close listens to clicks outside the modal. materialize built that for us
-                onClose={()=>setOpenModal(false)}
+            open={openModal}
+            // on close listens to clicks outside the modal. materialize built that for us
+            onClose={()=>setOpenModal(false)}
             >
-                <div style={modalStyle} className={classes.paper}>
+            <div style={modalStyle} className={classes.paper}>
                 <div className="login__modalSignup">
                     <div className="login__modalTop">
                         <h1>Sign Up</h1>
@@ -98,8 +97,9 @@ function Login() {
                     </div>
 
                 </div>
-                </div>
+            </div>
             </Modal>
+
             <div className='login__logo'>
                 <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt='facebook logo'
