@@ -99,7 +99,7 @@
     }
 }
 
-@media (max-width: 520px){
+@media (max-width: 580px){
     .messageSender{
         width: 100%;
     }
@@ -114,8 +114,34 @@
 
     .messageSender__top>form>input{
         margin: 0px 5px;
+        padding: 5px 8px;
     }
     .messageSender__button{
         font-size: 9px;
     }
+
+    .messageSender__top input{
+        width: 20%;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 320px){
+    .messageSender__option>.MuiSvgIcon-root{
+        font-size: 15px;
+    }
+
+    .messageSender__top>form>input{
+        padding: 5px 8px;
+    }
+
+    .messageSender__button{
+        padding: 0px 2px;
+    }
+
+    .messageSender__top input{
+        width: 20%;
+        font-size: 7px;
+    }
+
 }

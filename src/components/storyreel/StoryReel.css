@@ -14,9 +14,11 @@
     }
 }
 
-@media (max-width: 520px){
+@media (max-width: 580px){
     .storyReel{
+        display: flex;
         width: 100%;
+
     }
 }
 

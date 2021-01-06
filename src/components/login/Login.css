@@ -6,6 +6,10 @@
     margin-bottom: auto;
 }
 
+.login__logo{
+    margin-bottom: -50px;
+}
+
 
 .login>div>img{
     object-fit: contain;
@@ -133,4 +137,27 @@
 
 .login__modalTop > p{
     color: rgba(94, 94, 94, 0.961);
+}
+
+@media (max-width: 580px){
+    .login__modalSignup{
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 320px){
+    .login__formContainer{
+       width: 80%;
+       margin-left: auto;
+       margin-right: auto;
+    }
+
+    .login__input{
+        width: 70%;
+    }
+    
+    .login__button-google,
+    .login__button{
+        width: 80%;
+    }
 }

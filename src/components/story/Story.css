@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.story:last-child{
+    margin-right: 0px;
+}
+
 .story:hover {
     transform: scale(1.07);
 }
@@ -56,14 +60,12 @@
 
 @media (max-width: 520px){
    .story{
-       width: 100px;
-       height: 150px;
+       margin-right: 4px;
    }
 
    .story > h4{
     bottom: 15px;
     left: 5px;
-    
 }
 
 @media (max-width: 320px){
