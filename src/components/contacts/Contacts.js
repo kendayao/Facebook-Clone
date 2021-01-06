@@ -5,7 +5,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ContactsItem from '../contacts-item/ContactsItem';
 import db from '../../firebase/firebase';
-import { NewReleasesTwoTone } from '@material-ui/icons';
 
 function Contacts() {
 

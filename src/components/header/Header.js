@@ -17,7 +17,7 @@ import {auth} from '../../firebase/firebase';
 
 
 function Header() {
-    const [{user, username}, dispatch] = useStateValue();
+    const [{user}, dispatch] = useStateValue();
     const [openDropdown, setOpenDropdown]=useState(false);
 
     return (

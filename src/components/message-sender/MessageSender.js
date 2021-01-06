@@ -6,8 +6,6 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import {useStateValue} from '../../contextAPI/StateProvider'
 import db from '../../firebase/firebase'
-import firebase from '../../firebase/firebase'
-
 
 
 function MessageSender() {
