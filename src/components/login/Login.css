@@ -1,15 +1,7 @@
 .login{
     display: grid;
     place-items: center;
-    height: 100vh;
-    margin-top: auto;
-    margin-bottom: auto;
 }
-
-.login__logo{
-    margin-bottom: -50px;
-}
-
 
 .login>div>img{
     object-fit: contain;
@@ -21,6 +13,9 @@
     flex-direction: column;
 }
 
+.login__logo{
+    margin-top: 20px;
+}
 
 .login__formContainer{
     display: flex;
@@ -28,6 +23,7 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.173);
+    margin-bottom: 20px;
 }
 
 .login__form{
@@ -72,7 +68,11 @@
     margin-top: 5px;
     margin-bottom: 5px;
     color: gray;
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.login__form > p:last-child{
+    margin-top: -5px;
 }
 
 .login__button-create-account{
@@ -94,6 +94,8 @@
     text-align: center;
 
 }
+
+
 
 /* modal styling */
 .login__modalBottom>form{

@@ -116,6 +116,8 @@ function Login() {
                     <Button className='login__button' onClick={signIn}>Log In</Button>
                     <p>or</p>
                     <Button className='login__button-google' onClick={signInWithGoogle}><img className='login__image' alt='google logo' src='https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png'></img>Sign In With Google</Button>
+                    <p className='login__text'>*You may use the following test credentials to login or create a new account*</p>
+                    <p className='login__text-bottom'>email: cool_coder@email.com password: 12341234</p>
                 </form>
                 <div className='login__form-bottom'>
                     <Button className='login__button-create-account' onClick={()=>setOpenModal(true)}>Create New Account</Button>
