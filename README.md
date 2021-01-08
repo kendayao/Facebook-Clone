@@ -65,5 +65,7 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 Deployed application link: https://facebook-clone-d025c.web.app
 
+Video demo link: https://giphy.com/gifs/Xt2MXToUE3b8uSOr4q/fullscreen
+
 <img src="public/facebook-clone-home.png" width="600" height="450">
 
