@@ -5,7 +5,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+}
+
+.feed_StoryContainer{
+    overflow-x: hidden;
+    overflow-x: scroll;
+    width: 90%;
+    display: flex;
+    align-self: start;
 }
 
 /* media queries */
