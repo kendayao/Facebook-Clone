@@ -3,7 +3,6 @@ import './Login.css'
 import {auth, provider} from '../../firebase/firebase'
 import {useStateValue} from '../../contextAPI/StateProvider'
 import {actionTypes} from '../../contextAPI/reducer'
-import Button from '@material-ui/core/Button'
 import Modal from '@material-ui/core/Modal'
 import { makeStyles } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
