@@ -1,4 +1,159 @@
 .login{
+    background-color: #3B5998;
+    height: 100vh;
+}
+
+.login__logo>img{
+    object-fit: contain;
+    height: 85px;
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 270px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(0, 0, 0, 0.475);
+    box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.276);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.login__form>input{
+    padding: 12px;
+    border:none;
+    font-size: 14px;
+
+}
+
+.login__form>input:focus,
+.login__buttonLogIn:focus,
+.login__buttonSignInGoogle:focus
+{
+    outline: none;
+}
+
+input[type='email']{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.139);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+input[type='password']{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.login__buttonLogIn{
+    margin-top: 13px;
+    background-color: #4F6AA2;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login__buttonSignInGoogle{
+    margin-top: 7px;
+    background-color: #4F6AA2;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login__buttonLogIn:hover,
+.login__buttonSignInGoogle:hover,
+.login__signUpText:hover{
+    opacity: 0.8;
+}
+
+.login__signUpText{
+    color: white;
+    font-size: 14px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.login__text{
+    font-size: 11px;
+    color: rgba(245, 245, 245, 0.577);
+    margin-top: 5px
+}
+
+
+/* modal styling */
+.login__modalCloseIcon{
+    margin-left: 260px;
+    cursor: pointer;
+}
+
+.login__modalBottom>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__modalBottom>form>input:not(:last-child){
+    width: 94%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.login__modalSignupButton{
+    background-color: #42B72B;
+    color: white;
+    font-weight: 800;
+    width: 40%;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login__modalTop{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.255);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.login__modalTop > h1{
+    margin-bottom: 5px;
+}
+
+.login__modalTop > p{
+    color: rgba(94, 94, 94, 0.961);
+}
+
+/* .login{
     display: grid;
     place-items: center;
 }
@@ -98,7 +253,7 @@
 
 
 /* modal styling */
-.login__modalBottom>form{
+/* .login__modalBottom>form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,10 +293,10 @@
 
 .login__modalTop > p{
     color: rgba(94, 94, 94, 0.961);
-}
+} */
 
 /* media queries */
-@media (max-width: 580px){
+/* @media (max-width: 580px){
     .login__modalSignup{
         padding: 0 30px;
     }
@@ -162,4 +317,4 @@
     .login__button{
         width: 80%;
     }
-}
+}  */

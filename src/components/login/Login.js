@@ -6,6 +6,7 @@ import {actionTypes} from '../../contextAPI/reducer'
 import Button from '@material-ui/core/Button'
 import Modal from '@material-ui/core/Modal'
 import { makeStyles } from '@material-ui/core/styles';
+import CloseIcon from '@material-ui/icons/Close';
 
 function getModalStyle() {
     const top = 50;
@@ -83,6 +84,7 @@ function Login() {
             >
             <div style={modalStyle} className={classes.paper}>
                 <div className="login__modalSignup">
+                    <CloseIcon onClick={()=>setOpenModal(false)} fontSize='small' className='login__modalCloseIcon'/>
                     <div className="login__modalTop">
                         <h1>Sign Up</h1>
                         <p>It's quick and easy.</p>
@@ -99,31 +101,24 @@ function Login() {
                 </div>
             </div>
             </Modal>
-
+        <div className='login__container'>
             <div className='login__logo'>
-                <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt='facebook logo'
-                />
                 <img
-                    src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Facebook_New_Logo_%282015%29.svg/1024px-Facebook_New_Logo_%282015%29.svg.png"
                     alt="facebook logo"
                 />
             </div>
-            <div className='login__formContainer'>
-                <form className='login__form'>
-                    <input className='login__input' type='email' value={email} onChange={(event)=>setEmail(event.target.value)}  placeholder="Email"  />
-                    <input className='login__input' type='password' value={password} onChange={(event)=>setPassword(event.target.value)} placeholder="Password"  />
-                    <Button className='login__button' onClick={signIn}>Log In</Button>
-                    <p>or</p>
-                    <Button className='login__button-google' onClick={signInWithGoogle}><img className='login__image' alt='google logo' src='https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png'></img>Sign In With Google</Button>
-                    <p className='login__text'>*You may use the following test credentials to login or create a new account*</p>
-                    <p className='login__text-bottom'>email: cool_coder@email.com password: 12341234</p>
-                </form>
-                <div className='login__form-bottom'>
-                    <Button className='login__button-create-account' onClick={()=>setOpenModal(true)}>Create New Account</Button>
-                </div>
- 
+            <div className='login__form'>
+                <input type='email' placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)}></input>
+                <input type='password' placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)}></input>
+                <button className='login__buttonLogIn' onClick={signIn}>Log In</button>
+                <button className='login__buttonSignInGoogle' onClick={signInWithGoogle}>Log In With Google</button>
+                <p className='login__text'>*You may use the following credentials to login or click on signup to create your own*</p>
+                <p className='login__text'>email: cool_coder@email.com password: 12341234</p>
+                <p onClick={()=>setOpenModal(true)} className='login__signUpText'>Sign Up for Facebook</p>
             </div>
+        </div>
+           
         </div>
     )
 }
