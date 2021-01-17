@@ -4,4 +4,6 @@
 
 .app__body{
     display:flex;
+    overflow: hidden;
 }
+

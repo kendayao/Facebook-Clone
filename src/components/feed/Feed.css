@@ -7,13 +7,6 @@
     align-items: center;
 }
 
-.feed_StoryContainer{
-    overflow-x: hidden;
-    overflow-x: scroll;
-    width: 90%;
-    display: flex;
-    align-self: start;
-}
 
 /* media queries */
 @media (max-width: 1380px){

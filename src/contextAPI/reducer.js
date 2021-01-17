@@ -5,7 +5,8 @@ export const initialState={
 
 export const actionTypes={
     SET_USER:'SET_USER',
-    SET_NAME:'SET_NAME'
+    SET_NAME:'SET_NAME',
+    SET_POSTS: 'SET_POSTS'
 };
 
 const reducer=(state, action)=>{
@@ -20,6 +21,11 @@ const reducer=(state, action)=>{
             return{
                 ...state,
                 username: action.username,
+            };
+        case actionTypes.SET_POSTS:
+            return{
+                ...state,
+                posts: action.posts,
             };
 
             default:

@@ -29,9 +29,8 @@ function Feed() {
                 username={post.data.username}
                 image={post.data.image}
                 />
-
-
             ))}
+            
         </div>
     )
 }
