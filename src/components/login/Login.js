@@ -37,6 +37,7 @@ function Login() {
     const [email, setEmail]=useState('')
     const [name, setName]=useState('')
     const [password, setPassword]=useState('')
+    const [image, setImage]=useState('')
     const [openModal, setOpenModal]=useState(false)
 
     const signInWithGoogle =()=>{
@@ -52,6 +53,7 @@ function Login() {
         .then(authUser=>(
             authUser.user.updateProfile({
                 displayName: name,
+                photoURL: image,
             }).then(()=>(
                 dispatch({
                     type: actionTypes.SET_NAME,
@@ -93,6 +95,7 @@ function Login() {
                             <input type='text' placeholder='Name' value={name} onChange={(event)=>setName(event.target.value)} required></input>
                             <input type='email' placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} required></input>
                             <input type='password' placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)}></input>
+                            <input type='text' placeholder='Profile-ImageURL (optional)' value={image} onChange={(event)=>setImage(event.target.value)}></input>
                             <input className='login__modalSignupButton' value='Sign Up' onClick={signUp}/>
                         </form>
                     </div>
