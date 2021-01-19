@@ -140,6 +140,11 @@
     cursor: pointer;
 }
 
+.post__commentsButton--blue{
+    color: #2e81f4;
+    background-color: #F0F2F5;
+}
+
 .post__commentsDisplay{
     margin-top: 10px;
     display: flex;

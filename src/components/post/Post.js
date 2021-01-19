@@ -116,7 +116,7 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
             </div>
             <div className='post__likes'>
                 <div className='post__likesLeft'>
-                    <ThumbUpIcon className='post__likesIcon' style={{ fontSize: 14 }}  />
+                    <ThumbUpIcon className='post__likesIcon' style={{ fontSize: 14 }} />
                     <p>{likes.length}</p>
                 </div>
                 <p className={comments.length===0? 'post__commentsText--hide': 'post__commentsText--show'} onClick={showComments?()=>setShowComments(false):()=>setShowComments(true)}>{comments.length>1?comments.length+' comments': comments.length+' comment'} </p>
@@ -143,7 +143,7 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
                 <form className='post__commentsInput'>   
                     <Avatar src={user.photoURL} className={classes.large}/>
                     <input type='text' onChange={handleChange} value={comment} placeholder='Write a comment...'></input>
-                    <button onClick={postComment} type='submit' disabled={!comment}>Post</button>
+                    <button onClick={postComment} type='submit' disabled={!comment} className={comment?'post__commentsButton--blue': null}>Post</button>
                 </form>
                 {comments.map(commentItem=>(
                     <div key={commentItem.id} className='post__commentsDisplay'> 
