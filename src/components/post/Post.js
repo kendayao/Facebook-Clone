@@ -34,7 +34,8 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
         const [showComments, setShowComments]=useState(false)
         const [comment, setComment]=useState('')
         const [comments, setComments]=useState([])
-         const classes = useStyles();
+        const [likes, setLikes]=useState([])
+        const classes = useStyles();
 
          useEffect(()=>{
             let unsubscribe;
@@ -45,9 +46,19 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
                 .collection("comments")
                 .orderBy('timestamp', 'desc')
                 .onSnapshot((snapshot)=>(
-                    setComments(snapshot.docs.map((doc)=>doc.data()))
+                    setComments(snapshot.docs.map((doc)=>({id:doc.id ,data:doc.data()})))
                 ))
             }
+            if(postId){
+                unsubscribe=db
+                .collection("posts")
+                .doc(postId)
+                .collection("likes")
+                .orderBy('timestamp', 'desc')
+                .onSnapshot((snapshot)=>(
+                    setLikes(snapshot.docs.map((doc)=>doc.data()))
+                ))
+                }
             return()=>{
                 unsubscribe();
             }
@@ -68,6 +79,25 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
                 setComment(event.target.value)
         }
 
+        const handleLike=()=>{
+            db.collection('posts').doc(postId).collection('likes').add({
+                likeUser: user.displayName,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+        }
+
+        const handleUnlike=()=>{
+            db.collection("posts").doc(postId).collection("likes").where("likeUser", "==", user.displayName)
+            .get()
+            .then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                doc.ref.delete();
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+        }
         
     return (
         <div className='post'>
@@ -86,17 +116,17 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
             </div>
             <div className='post__likes'>
                 <div className='post__likesLeft'>
-                <ThumbUpIcon className='post__likesIcon' style={{ fontSize: 14 }}></ThumbUpIcon> 
-                <p>55</p>
+                    <ThumbUpIcon className='post__likesIcon' style={{ fontSize: 14 }}  />
+                    <p>{likes.length}</p>
                 </div>
-                <p onClick={showComments?()=>setShowComments(false):()=>setShowComments(true)}>View all comments</p>
+                <p className={comments.length===0? 'post__commentsText--hide': 'post__commentsText--show'} onClick={showComments?()=>setShowComments(false):()=>setShowComments(true)}>{comments.length>1?comments.length+' comments': comments.length+' comment'} </p>
             </div>
             <div className='post__options'>
-                <div className='post__option'>
-                    <ThumbUpIcon />
+                <div className={likes.some(like=>like['likeUser']===user.displayName) ? 'post__option post__option--blue' : 'post__option'} onClick={(likes.some(like=>like['likeUser']==user.displayName)) ? handleUnlike : handleLike}>
+                    <ThumbUpIcon  />
                     <p>Like</p>
                 </div>
-                <div className='post__option' onClick={()=>setShowComments(true)}>
+                <div className='post__option' onClick={showComments?()=>setShowComments(false): ()=>setShowComments(true) }>
                     <ChatBubbleOutlineIcon />
                     <p>Comment</p>
                 </div>
@@ -110,20 +140,18 @@ function Post({profilePic, postId, image, username, timestamp, message}) {
                 </div>
             </div>
             <div className={showComments? 'post__comments post__comments--show' : 'post__comments post__comments--hide'}>
-                <div className='post__commentsInput'>   
-                    <Avatar src={user.photoURL} className={classes.small}/>
+                <form className='post__commentsInput'>   
+                    <Avatar src={user.photoURL} className={classes.large}/>
                     <input type='text' onChange={handleChange} value={comment} placeholder='Write a comment...'></input>
-                    <button onClick={postComment}>Post comment</button>
-                </div>
+                    <button onClick={postComment} type='submit' disabled={!comment}>Post</button>
+                </form>
                 {comments.map(commentItem=>(
-                    <div className='post__commentsDisplay'> 
-                   
-                    <Avatar src={commentItem.profilePic} className={`post__commentsDisplayAvatar ${classes.large}`} />
+                    <div key={commentItem.id} className='post__commentsDisplay'> 
+                        <Avatar src={commentItem.data.profilePic} className={`post__commentsDisplayAvatar ${classes.large}`} />
                     <div className='post__commentsDisplayBody'>
-                        <p>{commentItem.username}</p>
-                        <p>{commentItem.text}</p>
+                        <p>{commentItem.data.username}</p>
+                        <p>{commentItem.data.text}</p>
                     </div>
-        
             </div>
                 ))}
                 

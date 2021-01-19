@@ -63,6 +63,14 @@
     margin-left: 5px;
 }
 
+.post__commentsText--show{
+    display: block;
+}
+
+.post__commentsText--hide{
+    display: none;
+}
+
 .post__likesIcon{
     color: #2e81f4
 }
@@ -86,6 +94,10 @@
     justify-content: center;
     padding: 5px;
     flex: 1;
+}
+
+.post__option--blue{
+    color: #2e81f4
 }
 
 .post__option>p{
@@ -125,6 +137,7 @@
     padding: 10px;
     border: none;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .post__commentsDisplay{
@@ -179,6 +192,15 @@
 
     .post__bottom>p{
         font-size: 14px;
+    }
+
+    .post__commentsDisplayBody{
+        font-size: 12px;
+    }
+
+    .post__commentsInput>input,
+    .post__commentsInput>button{
+        font-size: 11px;
     }
 
 }
