@@ -7,9 +7,9 @@ function StoryReel() {
         <div className='storyReel'>
            
             <Story
-                    image='https://mk0laterblogouwugirk.kinstacdn.com/wp-content/uploads/2019/01/How-Often-to-Post-to-Facebook-Stories.png'
+                    image='https://images.unsplash.com/photo-1552053831-71594a27632d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
                     profileSrc='https://lh3.googleusercontent.com/a-/AOh14GhgXVC02wLMu2gfn-yuBFxnysMH7yWgQTfWgFzxrg=s96-c'
-                    title='Kenny Cole'
+                    title='Ken Cole'
                 />
                 <Story
                     image='https://i.pinimg.com/originals/a2/43/1a/a2431acacbce3a7115f0815e96f10c4e.jpg'

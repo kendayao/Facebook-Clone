@@ -7,20 +7,20 @@ function Sponsored() {
             <h3>Sponsored</h3>
             <div className='sponsored__content'>
                 <div className='sponsored__image'>
-                    <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t45.5328-4/c0.0.800.800a/89778285_3592541550817097_8859157616153067520_n.jpg?_nc_cat=109&ccb=2&_nc_sid=c48759&_nc_ohc=8lMWuVZqs5IAX_QEEK8&_nc_ht=scontent-lax3-1.xx&_nc_tp=29&oh=81a0898872adcba519be9c8d5257327f&oe=601AF27D' alt='sponsor' />
+                    <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p296x100/147139789_6225340478291_7261414358252904123_n.png.jpg?_nc_cat=1&ccb=3&_nc_sid=67cdda&_nc_ohc=Xt53DpqpCZoAX-HqE6n&_nc_ht=scontent-lax3-1.xx&_nc_tp=31&oh=b55d0fcf4489746204f2e0c97842a811&oe=605A2AB6' alt='sponsor' />
                 </div>
                 <div className='sponsored__text'>
-                    <p>The Bay</p>
-                    <p>shop.thebay.com</p>
+                    <p>The Greenhouse</p>
+                    <p>greenhouse.com</p>
                 </div>
             </div>
             <div className='sponsored__content'>
                 <div className='sponsored__image'>
-                    <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p296x100/85833978_23844333896820372_2885392182305357824_n.png.jpg?_nc_cat=104&ccb=2&_nc_sid=67cdda&_nc_ohc=9itrCbtgzDgAX88qchr&_nc_ht=scontent-lax3-1.xx&oh=69f559c5fb9d4b800082fefd65a9a991&oe=60190F71' alt='sponsor' />
+                    <img src='https://scontent-lax3-2.xx.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p296x100/134902004_23846504633830454_8637752447220705755_n.png.jpg?_nc_cat=107&ccb=3&_nc_sid=67cdda&_nc_ohc=3NAYw_lHkBwAX8NZsZH&_nc_ht=scontent-lax3-2.xx&_nc_tp=31&oh=b79ca8197ad471848246e683a826298d&oe=60584709' alt='sponsor' />
                 </div>
                 <div className='sponsored__text'>
-                    <p>State Farm</p>
-                    <p>statefarm.com</p>
+                    <p>Resume Builder</p>
+                    <p>resume.com</p>
                 </div>
             </div>
         </div>
